@@ -1,8 +1,6 @@
 import sys
-sys.path.append('../config')
-
 import json
-import config
+from config import config
 
 def get_grid():
     f = open(config.grid)

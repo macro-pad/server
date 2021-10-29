@@ -1,10 +1,7 @@
-import sys
-sys.path.append('../config')
-
 import importlib.util
 import json
 import os
-import config
+from config import config
 
 # custom_plugin_folder = os.path.abspath(''../plugins + '/' + plugin_name)
 # spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
@@ -22,23 +19,19 @@ def get_pluginname(id):
 
 def call_plugin(id, param = None):
     plugin_name = get_pluginname(id)
+    print(plugin_name)
     if id == 0:
         #TODO: errorhandling
         log = 'Id not found'
     try:
-        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + plugin_name)
+        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
         # plugin.run()
     except:
-        standart_plugin_folder = os.path.abspath('../plugins' + '/' + plugin_name)
+        standart_plugin_folder = os.path.abspath('../plugins' + '/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
-
         
-    
-
-
-call_plugin(1)
