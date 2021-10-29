@@ -1,6 +1,13 @@
 {
-	"1":"start_page.py",
-    "2":"start_page.py",
+	"1": {
+        "script": "start_page.py"
+    },
+    "2": {
+        "script": "change_grid.py",
+        "params": {
+            "grid": 2
+        }
+    },
     "3":"start_page.py",
     "4":"start_page.py"
 }

@@ -18,27 +18,26 @@ def get_pluginname(id):
     except:
         return 0
 
-def call_plugin(id, param = None):
-    plugin_name = get_pluginname(id)
-    print(plugin_name)
+def call_plugin(id, value = None):
+    action = get_pluginname(id)
     if id == 0:
         error_handling.create_error_log('Button id not found')
         return 0
     try:
-        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(plugin_name))
-        spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
+        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(action["script"]))
+        spec   = importlib.util.spec_from_file_location(action["script"], custom_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     except:
-        standart_plugin_folder = os.path.abspath('plugins/' + str(plugin_name))
-        spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
+        standart_plugin_folder = os.path.abspath('plugins/' + str(action["script"]))
+        spec   = importlib.util.spec_from_file_location(action["script"], standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     finally:
         try:
-            if param != None:
-                plugin.run(param)
+            if "params" in action:
+                return plugin.run(value, action["params"])
             else:
-                plugin.run()
+                return plugin.run(value)
         except:
             error_handling.create_error_log('Error in plugin execution')
