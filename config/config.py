@@ -8,11 +8,13 @@ def load_config():
     f.close()
     return config
 
+def get_path(relative_path):
+    return os.path.abspath('../' + relative_path)
 
-def get_path(file):
-    return os.path.abspath('../' + file)
 
+config      = load_config()
+grid        = get_path(config["grid"])
+actions     = get_path(config["actions"])
+plugin_dir  = get_path(config["plugin_dir"])
 
-config  = load_config()
-grid    = get_path(config["grid"])
-actions = get_path(config["actions"])
+print(plugin_dir)
