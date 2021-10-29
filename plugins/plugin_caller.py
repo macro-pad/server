@@ -1,9 +1,13 @@
-import sys
-sys.path.append('../config')
 import importlib.util
 import json
 import os
-import config
+from config import config
+from error_handling import error_handler
+
+# custom_plugin_folder = os.path.abspath(''../plugins + '/' + plugin_name)
+# spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
+# plugin = importlib.util.module_from_spec(spec)
+# spec.loader.exec_module(plugin)
 
 def get_pluginname(id):
     try:
@@ -16,17 +20,17 @@ def get_pluginname(id):
 
 def call_plugin(id, param = None):
     plugin_name = get_pluginname(id)
+    print(plugin_name)
     if id == 0:
-        #TODO: errorhandling
-        log = 'Id not found'
+        error_handling.create_error_log('Button id not found')
         return 0
     try:
-        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + plugin_name)
+        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     except:
-        standart_plugin_folder = os.path.abspath('../plugins' + '/' + str(plugin_name))
+        standart_plugin_folder = os.path.abspath('plugins/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
@@ -37,8 +41,4 @@ def call_plugin(id, param = None):
             else:
                 plugin.run()
         except:
-            #TODO: Errorhandling
-            log = 'Error in plugin execution'
-    return
-
-call_plugin(1)
+            error_handling.create_error_log('Error in plugin execution')

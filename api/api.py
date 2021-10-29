@@ -1,17 +1,9 @@
-import sys
-sys.path.append('../plugins')
-
 from fastapi import FastAPI
-import data
-import models
-import plugin_caller
+from plugins import plugin_caller
+from api import models
+from api import data
 
 app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
 
 
 @app.get("/grid")
