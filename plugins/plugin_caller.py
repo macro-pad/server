@@ -21,17 +21,25 @@ def call_plugin(id, param = None):
     plugin_name = get_pluginname(id)
     print(plugin_name)
     if id == 0:
-        #TODO: errorhandling
-        log = 'Id not found'
+        error_handling.create_error_log('Button id not found')
+        return 0
     try:
         custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
-        # plugin.run()
     except:
         standart_plugin_folder = os.path.abspath('../plugins' + '/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
-        
+    finally:
+        try:
+            if param != None:
+                plugin.run(param)
+            else:
+                plugin.run()
+        except:
+            error_handling.create_error_log('Error in plugin execution')
+
+call_plugin(1)
