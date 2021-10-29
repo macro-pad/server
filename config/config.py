@@ -8,7 +8,6 @@ def load_config():
     f.close()
     return config
 
-
 def get_path(relativ_path):
     return os.path.abspath('../' + relativ_path)
 
