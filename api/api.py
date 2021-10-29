@@ -8,14 +8,11 @@ app = FastAPI()
 
 @app.get("/grid")
 def get_grid():
-    return data.get_grid()
+    return data.get_grid(1)
 
 
 @app.post("/action/{id}")
 def action(id, action: models.Action):
     plugin_response = plugin_caller.call_plugin(id, action.value)
-    if plugin_response == True:
-        return {"status": "success"}
-
-    return {"status": "error", "error": plugin_response}
-
+    if plugin_response:
+        return plugin_response
