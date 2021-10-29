@@ -1,10 +1,13 @@
-import sys
-sys.path.append('../config')
 import importlib.util
 import json
 import os
 from config import config
-import error_handling
+from error_handling import error_handler
+
+# custom_plugin_folder = os.path.abspath(''../plugins + '/' + plugin_name)
+# spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
+# plugin = importlib.util.module_from_spec(spec)
+# spec.loader.exec_module(plugin)
 
 def get_pluginname(id):
     try:
@@ -27,7 +30,7 @@ def call_plugin(id, param = None):
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     except:
-        standart_plugin_folder = os.path.abspath('../plugins' + '/' + str(plugin_name))
+        standart_plugin_folder = os.path.abspath('plugins/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
