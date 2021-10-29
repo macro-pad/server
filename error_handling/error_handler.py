@@ -9,5 +9,3 @@ def create_error_log(text):
     f.write(text)
     f.write('\n')
     f.close()
-
-create_error_log('new error, you fucked up baaaadly')

@@ -4,6 +4,7 @@ import importlib.util
 import json
 import os
 import config
+import error_handling
 
 def get_pluginname(id):
     try:
@@ -17,8 +18,7 @@ def get_pluginname(id):
 def call_plugin(id, param = None):
     plugin_name = get_pluginname(id)
     if id == 0:
-        #TODO: errorhandling
-        log = 'Id not found'
+        error_handling.create_error_log('Button id not found')
         return 0
     try:
         custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + plugin_name)
@@ -37,8 +37,6 @@ def call_plugin(id, param = None):
             else:
                 plugin.run()
         except:
-            #TODO: Errorhandling
-            log = 'Error in plugin execution'
-    return
+            error_handling.create_error_log('Error in plugin execution')
 
 call_plugin(1)
