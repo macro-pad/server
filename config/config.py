@@ -13,8 +13,9 @@ def get_path(relativ_path):
 
 
 config      = load_config()
+
+host        = config["host"]
+port        = config["port"]
 grid        = get_path(config["grid"])
 actions     = get_path(config["actions"])
 plugin_dir  = get_path(config["plugin_dir"])
-
-print(plugin_dir)
