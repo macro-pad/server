@@ -1,4 +1,5 @@
 {
     "grid": "grid.json",
-    "actions": "actions.json"
+    "actions": "actions.json",
+    "plugin_dir": "custom_plugins/"
 }
