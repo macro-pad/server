@@ -9,8 +9,8 @@ def load_config():
     return config
 
 
-def get_path(relativ_path):
-    return os.path.abspath(relativ_path)
+def get_path(relative_path):
+    return os.path.abspath(relative_path)
 
 
 config      = load_config()
