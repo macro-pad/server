@@ -9,11 +9,6 @@ import plugin_caller
 app = FastAPI()
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
 @app.get("/grid")
 def get_grid():
     return data.get_grid()
