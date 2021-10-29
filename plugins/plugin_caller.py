@@ -4,11 +4,6 @@ import os
 from config import config
 from error_handling import error_handler
 
-# custom_plugin_folder = os.path.abspath(''../plugins + '/' + plugin_name)
-# spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
-# plugin = importlib.util.module_from_spec(spec)
-# spec.loader.exec_module(plugin)
-
 def get_pluginname(id):
     try:
         f = open(config.actions)
