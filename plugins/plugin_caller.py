@@ -3,7 +3,7 @@ sys.path.append('../config')
 import importlib.util
 import json
 import os
-import config
+from config import config
 import error_handling
 
 def get_pluginname(id):
@@ -17,11 +17,12 @@ def get_pluginname(id):
 
 def call_plugin(id, param = None):
     plugin_name = get_pluginname(id)
+    print(plugin_name)
     if id == 0:
         error_handling.create_error_log('Button id not found')
         return 0
     try:
-        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + plugin_name)
+        custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
@@ -38,5 +39,3 @@ def call_plugin(id, param = None):
                 plugin.run()
         except:
             error_handling.create_error_log('Error in plugin execution')
-
-call_plugin(1)
