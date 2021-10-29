@@ -2,6 +2,7 @@ import importlib.util
 import json
 import os
 from config import config
+from error_handling import error_handler
 
 # custom_plugin_folder = os.path.abspath(''../plugins + '/' + plugin_name)
 # spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
@@ -29,7 +30,7 @@ def call_plugin(id, param = None):
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     except:
-        standart_plugin_folder = os.path.abspath('../plugins' + '/' + str(plugin_name))
+        standart_plugin_folder = os.path.abspath('plugins/' + str(plugin_name))
         spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
@@ -41,5 +42,3 @@ def call_plugin(id, param = None):
                 plugin.run()
         except:
             error_handling.create_error_log('Error in plugin execution')
-
-call_plugin(1)
