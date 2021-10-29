@@ -21,13 +21,13 @@ def call_plugin(id, param = None):
         #TODO: errorhandling
         log = 'Id not found'
     try:
-        custom_plugin_folder = os.path.abspath('../customPlugins' + '\\' + plugin_name)
+        custom_plugin_folder = os.path.abspath(config.plugin_dir + '\\' + plugin_name)
         spec   = importlib.util.spec_from_file_location(plugin_name, custom_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
         # plugin.run()
     except:
-        standart_plugin_folder = os.path.abspath('./' + plugin_name)
+        standart_plugin_folder = os.path.abspath('../plugins' + '\\' + plugin_name)
         spec   = importlib.util.spec_from_file_location(plugin_name, standart_plugin_folder)
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
