@@ -16,7 +16,7 @@ def get_pluginname(id):
 def call_plugin(id, value = None):
     action = get_pluginname(id)
     if id == 0:
-        error_handling.create_error_log('Button id not found')
+        error_handler.create_error_log('Button id not found')
         return 0
     try:
         custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(action["script"]))
@@ -35,4 +35,4 @@ def call_plugin(id, value = None):
             else:
                 return plugin.run(value)
         except:
-            error_handling.create_error_log('Error in plugin execution')
+            error_handler.create_error_log('Error in plugin execution')
