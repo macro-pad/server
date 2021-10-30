@@ -1,9 +1,9 @@
 import os
 import json
 
-#TODO also allow to set path in env var
+
 def load_config():
-    f = open('config.json')
+    f = open(os.environ.get('MACRO-PAD_CONFIG', 'config.json'))
     config = json.load(f)
     f.close()
     return config
