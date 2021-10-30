@@ -88,7 +88,7 @@
         }
     },
     "16": {
-        "script": "mute.py"
+        "script": "discord_mute.py"
     },
     "17": {
         "script": "open_website.py",
