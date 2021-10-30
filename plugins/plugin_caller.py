@@ -3,6 +3,7 @@ import json
 import os
 from config import config
 from error_handling import error_handler
+import threading
 
 def get_pluginname(id):
     try:
@@ -16,7 +17,7 @@ def get_pluginname(id):
 def call_plugin(id, value = None):
     action = get_pluginname(id)
     if id == 0:
-        error_handling.create_error_log('Button id not found')
+        error_handler.create_error_log('Button id not found')
         return 0
     try:
         custom_plugin_folder = os.path.abspath(config.plugin_dir + '/' + str(action["script"]))
@@ -29,10 +30,14 @@ def call_plugin(id, value = None):
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     finally:
-        try:
-            if "params" in action:
-                return plugin.run(value, action["params"])
-            else:
-                return plugin.run(value)
-        except:
-            error_handling.create_error_log('Error in plugin execution')
+        if "async" in action:
+            asyncThread = threading.Thread(target=plugin.run)
+            asyncThread.start()
+        else:
+            try:
+                if "params" in action:
+                    return plugin.run(value, action["params"])
+                else:
+                    return plugin.run(value)
+            except:
+                error_handler.create_error_log('Error in plugin execution')

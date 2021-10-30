@@ -8,6 +8,9 @@
             "grid": 2
         }
     },
-    "3":"start_page.py",
+    "3": {
+        "script": "start_page.py",
+        "async" : "1"
+    },
     "4":"start_page.py"
 }
