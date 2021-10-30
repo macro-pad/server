@@ -36,20 +36,20 @@ def call_plugin(id, value = None):
             error_handler.create_error_log("Wrong plugin name")
     finally:
         # Execute the code with different methods depending on the input
-        if "async" in action and action["async"] == True:
-            asyncThread = threading.Thread(target=plugin.run)
-            try:
-                if "params" in action:
-                    asyncThread.start(value, action["params"])
-                else:
-                    asyncThread.start(value)
-            except:
-                error_handler.create_error_log('Error in plugin execution')
-        else:
-            try:
-                if "params" in action:
-                    return plugin.run(value, action["params"])
-                else:
-                    return plugin.run(value)
-            except:
-                error_handler.create_error_log('Error in plugin execution')
+        # if "async" in action and action["async"] == True:
+        #     asyncThread = threading.Thread(target=plugin.run)
+        #     try:
+        #         if "params" in action:
+        #             asyncThread.start(value, action["params"])
+        #         else:
+        #             asyncThread.start(value)
+        #     except:
+        #         error_handler.create_error_log('Error in plugin execution')
+        # else:
+        try:
+            if "params" in action:
+                return plugin.run(value, action["params"])
+            else:
+                return plugin.run(value)
+        except:
+            error_handler.create_error_log('Error in plugin execution')
