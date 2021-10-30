@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import MagicMock, patch
 
 import sys
-sys.path.append('../plugins')
+sys.path.append('plugins')
 import open_website
 
 class TestOpenWebsite(unittest.TestCase):
