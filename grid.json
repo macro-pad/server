@@ -196,8 +196,8 @@
             "1": {
                 "columns": {
                     "18": {
-                        "type": "string",
-                        "name": "Weather",
+                        "type": "json-field",
+                        "field_name": "name",
                         "width": "3"
                     }
                 }
