@@ -32,7 +32,13 @@ def call_plugin(id, value = None):
     finally:
         if "async" in action:
             asyncThread = threading.Thread(target=plugin.run)
-            asyncThread.start()
+            try:
+                if "params" in action:
+                    asyncThread.start(value, action["params"])
+                else:
+                    asyncThread.start(value)
+            except:
+                error_handler.create_error_log('Error in plugin execution')
         else:
             try:
                 if "params" in action:
