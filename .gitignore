@@ -155,4 +155,4 @@ cython_debug/
 .ionide
 
 ### Own files
-.error_handling/error_log.txt
+error_handling/error_log.txt
