@@ -205,7 +205,7 @@
             "2": {
                 "columns": {
                     "18": {
-                        "type": "weather",
+                        "type": "string",
                         "name": "Weather",
                         "width": "3"
                     }
