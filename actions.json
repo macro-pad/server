@@ -88,6 +88,6 @@
         }
     },
     "16": {
-        "script": "mute.py"
+        "script": "discord_mute.py"
     }
 }
