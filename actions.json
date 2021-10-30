@@ -40,7 +40,7 @@
         "params": {
             "link": "https://google.com"
         },
-        "async": 1
+        "async": true
     }, 
     "9": {
         "script": "open_website.py",

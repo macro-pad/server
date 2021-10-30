@@ -30,13 +30,13 @@ def call_plugin(id, value = None):
         plugin = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(plugin)
     finally:
-        if "async" in action:
+        if "async" in action and action["async"] == True:
             asyncThread = threading.Thread(target=plugin.run)
             try:
                 if "params" in action:
-                    asyncThread.start(value, action["params"])
+                    asyncThread.start(value, action["params"], 'ab')
                 else:
-                    asyncThread.start(value)
+                    asyncThread.start(value, 'ab')
             except:
                 error_handler.create_error_log('Error in plugin execution')
         else:
