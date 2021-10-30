@@ -195,15 +195,6 @@
         "rows": {
             "1": {
                 "columns": {
-                    "17": {
-                        "type": "button",
-                        "name": "SRF",
-                        "width": "1"
-                    }
-                }
-            },
-            "2": {
-                "columns": {
                     "18": {
                         "type": "string",
                         "name": "Weather",
@@ -211,7 +202,7 @@
                     }
                 }
             },
-            "3": {
+            "2": {
                 "columns": {
                     "1": {
                         "type": "redirect-button",
