@@ -24,8 +24,11 @@
         }
     },
     "5": {
-        "script": "mute.py"
-    }, 
+        "script": "change_grid.py",
+        "params": {
+            "grid": 5
+        }
+    },
     "6": {
         "script": "change_volume.py"
     },  
@@ -81,7 +84,19 @@
     "15": {
         "script": "open_website.py",
         "params": {
+            "link": "https://instagram.com"
+        }
+    },
+    "16": {
+        "script": "mute.py"
+    },
+    "17": {
+        "script": "open_website.py",
+        "params": {
             "link": "https://srf.ch"
         }
+    },
+    "18": {
+        "script": "weather.py"
     }
 }
