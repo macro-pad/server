@@ -27,7 +27,7 @@
         "script": "mute.py"
     }, 
     "6": {
-        "script": "volume.py"
+        "script": "change_volume.py"
     },  
     "7": {
         "script": "open_website.py",
