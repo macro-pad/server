@@ -98,5 +98,11 @@
     },
     "18": {
         "script": "weather.py"
+    },
+    "19": {
+        "script": "weather.py"
+    },
+    "20": {
+        "script": "weather.py"
     }
 }

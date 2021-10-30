@@ -199,11 +199,21 @@
                         "type": "json-field",
                         "field_name": "name",
                         "width": "3"
+                    },
+                    "19": {
+                        "type": "json-field",
+                        "field_name": "temp",
+                        "width": "3"
                     }
                 }
             },
             "2": {
                 "columns": {
+                    "20": {
+                        "type": "json-field",
+                        "field_name": "speed",
+                        "width": "3"
+                    },
                     "1": {
                         "type": "redirect-button",
                         "name": "Back",
