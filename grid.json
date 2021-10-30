@@ -1,84 +1,371 @@
 {
+
     "1": {
+
         "rows": {
+
             "1": {
+
                 "columns": {
-                    "1": {
-                        "type": "button",
-                        "name": "GitHub",
-                        "width": "1"
-                    },
+
                     "2": {
+
                         "type": "redirect-button",
-                        "name": "YouTube",
+
+                        "name": "Devlopment",
+
                         "width": "1"
+
                     },
+
                     "3": {
-                        "type": "button",
-                        "name": "Google",
+
+                        "type": "redirect-button",
+
+                        "name": "Gaming",
+
                         "width": "1"
-                    }
-    
-                }
-            },
-            "2": {
-                "columns": {
+
+                    },
+
                     "4": {
-                        "type": "button",
-                        "name": "Button 4",
-                        "width": "1"
-                    }
-                }
-            },
-            "3": {
-                "columns": {
-                    "7": {
-                        "type": "button",
-                        "name": "Mute",
-                        "width": "2"
-                    },
-                    "8": {
+
                         "type": "redirect-button",
-                        "name": "Overview",
+
+                        "name": "Casual",
+
                         "width": "1"
+
                     }
+
                 }
+
             }
-    
+
         },
+
         "settings": {
+
             "border_width": 20,
+
             "column_spacing": 20,
+
             "row_spacing": 20
+
         }
+
     },
+
     "2": {
+
         "rows": {
+
             "1": {
+
                 "columns": {
-                    "1": {
+
+                    "7": {
+
                         "type": "button",
-                        "name": "lol1",
+
+                        "name": "GitHub",
+
                         "width": "1"
+
                     },
-                    "2": {
-                        "type": "button",
-                        "name": "lol2",
+
+                    "8": {
+
+                        "type": "redirect-button",
+
+                        "name": "Google",
+
                         "width": "1"
+
                     },
-                    "3": {
+
+                    "9": {
+
                         "type": "button",
-                        "name": "lol3",
+
+                        "name": "StackOverflow",
+
                         "width": "1"
+
                     }
-    
+
                 }
+
+            },
+
+            "2": {
+
+                "columns": {
+
+                    "6": {
+
+                        "type": "slider",
+
+                        "name": "Volume",
+
+                        "width": "3"
+
+                    }
+
+                }
+
+            },
+
+            "3": {
+
+                "columns": {
+
+                    "5": {
+
+                        "type": "button",
+
+                        "name": "Mute",
+
+                        "width": "2"
+
+                    },
+
+                    "1": {
+
+                        "type": "redirect-button",
+
+                        "name": "Back",
+
+                        "width": "1"
+
+                    }
+
+                }
+
             }
+
+    
+
         },
+
         "settings": {
+
             "border_width": 20,
+
             "column_spacing": 20,
+
             "row_spacing": 20
+
         }
+
+    },
+
+    "3": {
+
+        "rows": {
+
+            "1": {
+
+                "columns": {
+
+                    "10": {
+
+                        "type": "button",
+
+                        "name": "Krunker.io",
+
+                        "width": "1"
+
+                    },
+
+                    "11": {
+
+                        "type": "redirect-button",
+
+                        "name": "Agar.io",
+
+                        "width": "1"
+
+                    },
+
+                    "12": {
+
+                        "type": "button",
+
+                        "name": "Snake",
+
+                        "width": "1"
+
+                    }
+
+                }
+
+            },
+
+            "2": {
+
+                "columns": {
+
+                    "6": {
+
+                        "type": "slider",
+
+                        "name": "Volume",
+
+                        "width": "3"
+
+                    }
+
+                }
+
+            },
+
+            "3": {
+
+                "columns": {
+
+                    "5": {
+
+                        "type": "button",
+
+                        "name": "Mute",
+
+                        "width": "2"
+
+                    },
+
+                    "1": {
+
+                        "type": "redirect-button",
+
+                        "name": "Back",
+
+                        "width": "1"
+
+                    }
+
+                }
+
+            }
+
+    
+
+        },
+
+        "settings": {
+
+            "border_width": 20,
+
+            "column_spacing": 20,
+
+            "row_spacing": 20
+
+        }
+
+    },
+
+    "4": {
+
+        "rows": {
+
+            "1": {
+
+                "columns": {
+
+                    "13": {
+
+                        "type": "button",
+
+                        "name": "YouTube",
+
+                        "width": "1"
+
+                    },
+
+                    "14": {
+
+                        "type": "redirect-button",
+
+                        "name": "Reddit",
+
+                        "width": "1"
+
+                    },
+
+                    "15": {
+
+                        "type": "button",
+
+                        "name": "SRF.ch",
+
+                        "width": "1"
+
+                    }
+
+                }
+
+            },
+
+            "2": {
+
+                "columns": {
+
+                    "6": {
+
+                        "type": "slider",
+
+                        "name": "Volume",
+
+                        "width": "3"
+
+                    }
+
+                }
+
+            },
+
+            "3": {
+
+                "columns": {
+
+                    "5": {
+
+                        "type": "button",
+
+                        "name": "Mute",
+
+                        "width": "2"
+
+                    },
+
+                    "1": {
+
+                        "type": "redirect-button",
+
+                        "name": "Back",
+
+                        "width": "1"
+
+                    }
+
+                }
+
+            }
+
+    
+
+        },
+
+        "settings": {
+
+            "border_width": 20,
+
+            "column_spacing": 20,
+
+            "row_spacing": 20
+
+        }
+
     }
+
 }
