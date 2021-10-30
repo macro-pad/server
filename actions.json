@@ -84,10 +84,19 @@
     "15": {
         "script": "open_website.py",
         "params": {
-            "link": "https://srf.ch"
+            "link": "https://instagram.com"
         }
     },
     "16": {
         "script": "mute.py"
+    },
+    "17": {
+        "script": "open_website.py",
+        "params": {
+            "link": "https://srf.ch"
+        }
+    },
+    "18": {
+        "script": "weather.py"
     }
 }
