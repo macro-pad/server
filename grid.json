@@ -104,7 +104,7 @@
 
                     "6": {
 
-                        "type": "button",
+                        "type": "slider",
 
                         "name": "Volume",
 
@@ -208,7 +208,7 @@
 
                     "6": {
 
-                        "type": "button",
+                        "type": "slider",
 
                         "name": "Volume",
 
@@ -312,7 +312,7 @@
 
                     "6": {
 
-                        "type": "button",
+                        "type": "slider",
 
                         "name": "Volume",
 
