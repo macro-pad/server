@@ -30,7 +30,7 @@
         }
     },
     "6": {
-        "script": "change_volume.py"
+        "script": "volume.py"
     },  
     "7": {
         "script": "open_website.py",

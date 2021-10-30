@@ -11,4 +11,3 @@ class TestOpenWebsite(unittest.TestCase):
     def test_link1(self, open):
         open_website.run(1, {'link': 'https://test.com'})
         open.assert_called_with('https://test.com')
-
