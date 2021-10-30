@@ -5,11 +5,11 @@ import json
 def run(value):
     request = requests.get('https://api.openweathermap.org/data/2.5/weather?q=St.%20Gallen&appid=92b6b47a3146d720b6bb622ce7f1583c')
     if value == 'name':
-        return str(request.json()['name'])
+        return 'Name: ' + str(request.json()['name'])
     if value == 'speed':
-        return str(request.json()['wind']['speed']) + ' m/s'
+        return 'Speed: ' + str(request.json()['wind']['speed']) + ' m/s'
     if value == 'temp':
         r = request.json()['main']['temp']
         r = r-273.15
         r = round(r, 2)
-        return str(r) + ' °C'
+        return 'Temperature: ' + str(r) + ' °C'
