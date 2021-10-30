@@ -150,5 +150,7 @@ cython_debug/
 .history
 .ionide
 
+.vscode/
+
 ### Own files
 error_handling/error_log.txt
